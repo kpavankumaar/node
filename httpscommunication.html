@@ -1,0 +1,12 @@
+An end-user asks their browser to make a secure connection to a website (e.g.https://www.example.com)
+The browser obtains the IP address of the site from a DNS server then requests a secure connection to the website.
+To initiate this secure connection, the browser requests that the server identifies itself by sending a copy of its SSL certificate to the browser.
+The browser checks the certificate to ensure:
+That it is signed by a trusted CA
+That it is valid - that it has not expired or been revoked
+That it confirms to required security standards on key lengths and other items.
+That the domain listed on the certificate matches the domain that was requested by the user.
+When the browser confirms that the website can be trusted, it creates a symmetric session key which it encrypts with the public key in the website's certificate. The session key is then sent to the web server.
+The web server uses its private key to decrypt the symmetric session key.
+The server sends back an acknowledgement that is encrypted with the session key.
+From now on, all data transmitted between the server and the browser is encrypted and secure.
