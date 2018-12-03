@@ -1,0 +1,2 @@
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
+to load https://localhost:3001 -> use 'curl https://localhost:3001/sample -k' in terminal or commandprompt 
